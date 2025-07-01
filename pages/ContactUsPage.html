@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TravelHost</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../travel_recommendation.js"></script>
+</head>
+
+<body>
+    <nav>
+        <h1>TravelHost</h1>
+        <ul>
+            <li><a href="../travel_recommendation.html">Home</a></li>
+            <li><a href="AboutUsPage.html">About Us</a></li>
+            <li><a href="ContactUsPage.html">Contact Us</a></li>
+        </ul>
+
+        <!-- <div class="topmenu">
+                <a class= "navBar" href="homeRef">Home</a>
+                <a class= "navBar" href="aboutRef">About Us</a>
+                <a class= "navBar" href="contactRef">Contact Us</a>
+            </div>
+
+            <div class="topSearch">
+                <input type="text"> 
+                <button id= "navSearch">Search</button>
+                <button id= "navClear">Clear</button>
+            </div> -->
+    </nav>
+
+    <section class="contact">
+        <div class="flex_center">
+            <fieldset>
+                <legend class="Contact-Box">Contact Us</legend>
+                <div>Need to tell us something or get in touch? Leave a message.</div>
+                <input type="text" placeholder="Enter your full name(optional)" size = 25 class = "nameInput"> <br />
+                <input type="text" placeholder="Enter your email(optional)" size = 25 class = "emailInput"> <br />
+                <textarea id="contactResponse" cols="100" rows="10" placeholder="Enter your message"></textarea>
+                <div class="flex_center">
+                    <button id="recommend_btn" onclick="contactUs()">Submit</button>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="popup" id="popup" class="flex_center">
+            <img src="..\images\checkmark--outline.svg"/>
+            <h3>Thank you!</h3>
+            <button onclick="popupVisibility(false)">Ok</button>
+        </div>
+    </section>
+
+    <ul class = social-media-menu>
+        <li>
+            <a class = social-media-link href="https://facebook.com">
+                <img class = social-icon src="..\images\icons8-facebook.svg">
+            </a>
+        </li>
+        <li>
+            <a class = social-media-link href="https://twitter.com">
+                <img class = social-icon src="..\images\icons8-twitter-bird.svg">
+            </a>
+        </li>
+        <li>
+            <a class = social-media-link href="https://instagram.com">
+                <img class = social-icon src="..\images\icons8-instagram.svg">
+            </a>
+        </li>
+    </ul>
+</body>
+
+</html>

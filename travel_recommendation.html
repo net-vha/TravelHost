@@ -2,21 +2,70 @@
 <html>
     <head>
         <title>TravelHost</title>
+        <link rel="stylesheet" href="./style.css"/>
+        <script src="../travel_recommendation.js"></script>
     </head>
     <body>
-        <nav>
-            <a class= "navBar" href="homeRef">Home</a>
-            <a class= "navBar" href="aboutRef">About Us</a>
-            <a class= "navBar" href="contactRef">Contact Us</a>
-            <input type="text"> 
-            <button id= "navSearch">Search</button>
-            <button id= "navClear">Clear</button>
-        </nav>
-        <section>
-            <div style="align-items: center;">
-                <h1 style="font-size: large;">TravelHost will help you travel</h1>
-                <h2 style="font-size: medium;">We can help recommend and book your next trip. Find your next adventure!</h2>
+        <nav><h1>TravelHost</h1>
+            <ul>   
+                <li><a href="travel_recommendation.html">Home</a></li>
+                <li><a href="pages/AboutUsPage.html">About Us</a></li>
+                <li><a href="pages/ContactUsPage.html">Contact Us</a></li>
+                <li><input type="text" id="searchInput"> </li>
+                <li><button onclick="search()">Search</button></li>
+                <li><button onclick="clearSearch()">Clear</button></li>
+            </ul>
+
+            <!-- <div class="topmenu">
+                <a class= "navBar" href="homeRef">Home</a>
+                <a class= "navBar" href="aboutRef">About Us</a>
+                <a class= "navBar" href="contactRef">Contact Us</a>
             </div>
-        </section>
+
+            <div class="topSearch">
+                <input type="text"> 
+                <button id= "navSearch">Search</button>
+                <button id= "navClear">Clear</button>
+            </div> -->
+        </nav>
+
+        <!-- <div class="home">
+            <h1>TravelHost will help you travel</h1>
+            <p>We can help recommend and book your next trip. Find your next adventure!</p>
+        </div> -->
+
+
+        <!---->
+        <div class = "location-grid">
+            <div class = "location-wrapper">
+                <div class="location-image">
+                    <img src=".\\images\\angkor-809753_1280.jpg">
+                </div>
+                <div class="location-text">
+                    sample text
+                </div>
+            </div>
+        </div>
+        
+        <div class="footerContainter">
+            <ul class = social-media-menu>
+                    <li>
+                        <a class = social-media-link href="https://facebook.com">
+                            <img class = social-icon src="..\images\icons8-facebook.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a class = social-media-link href="https://twitter.com">
+                            <img class = social-icon src="..\images\icons8-twitter-bird.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a class = social-media-link href="https://instagram.com">
+                            <img class = social-icon src="..\images\icons8-instagram.svg">
+                        </a>
+                    </li>
+                </ul>
+        </div>
+        
     </body>
 </html>

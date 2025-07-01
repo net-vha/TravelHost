@@ -1,0 +1,187 @@
+body{
+  background: url(images/mountains-9659808_1280.jpg);
+  background-size: cover;
+  margin: 0px;
+}
+
+nav ul {
+    list-style-type: none;
+    /* padding: 0; */
+  }
+
+nav {
+  background-color: #242424;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:azure
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+  color:azure
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  color:azure
+}
+
+.topdiv {
+  background-color: darkslategray;
+}
+
+.topMenu {
+  width: 70%;
+  float:left
+}
+
+.topSearch {
+  width: 30%;
+  float:right
+}
+
+.home {
+  text-align: center;
+}
+
+.about-us{
+  margin-left: 15%;
+  margin-right: 15%;
+  justify-items: center;
+}
+
+.about-description h1{
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+}
+
+.about-description p{
+  font-size: 20px;
+}
+
+.faculty h1{
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+
+.profile-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20%;
+}
+
+.profile-wrapper{
+  width:100%;
+  background-color: rgb(44, 40, 40,.5);
+}
+
+.profile-picture img{
+  display: block;
+  max-width: 100%;
+  height:auto;
+
+}
+
+.profile-name{
+  color: white;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.profile-title{
+  color: white;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.profile-job{
+  color: white;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+
+.social-media-menu{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap:15px;
+  margin-top: 25px;
+}
+
+.social-media-icon{
+  height: auto;
+}
+
+
+/*locations*/
+.location-grid{
+  display:grid
+}
+
+.location-wrapper{
+  display:flex;
+  height: 200px;
+  width: 700px;
+  justify-content: center;
+}
+
+.location-image img{
+  max-width: 100%;
+  max-height: 100%;
+  margin:auto;
+  display:block;
+}
+
+.location-text{
+  background-color: whitesmoke;
+}
+
+/* Form Pop-up */
+.popup {
+  width:400px;
+  background-color: #aaaaaa;
+  border-radius: 3mm;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  position: fixed;
+  /* padding: 30px; */
+  visibility: hidden;
+}
+
+.popup img {
+  padding-top: 20px;
+}
+
+.popup button {
+  background-color: #fff;
+  border: 1px solid #2e2c30;
+  color: #2e2c30;
+  display: block;
+  border-radius: 6px;
+  text-align: center;
+  margin: 50px;
+  padding: 10px;
+  width: 2in;
+  font-size: 20px;
+  margin-left: 25%;
+}
+
+.popup button:hover {
+  background-color: #fff;
+  border: 2px solid #2e2c30;
+  color: #2e2c30;
+  display: block;
+  font-weight: bolder;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 25%;
+}
