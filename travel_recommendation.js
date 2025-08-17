@@ -1,12 +1,13 @@
 const dataURL = "travel_recommendation_api.json";
-const destinations = ['beach', 'beaches', 'temple', 'temples', 'country', 'countries']
+const destinations = ['beach', 'beaches', 'temple', 'temples']
+const countryDestinations = ['australia', 'japan', 'brazil']
 
 function contactUs() {
     let message = document.getElementById("contactResponse");
     let name = document.getElementsByClassName("nameInput");
     let email = document.getElementsByClassName("emailInput");
 
-    if(message.value != null && message.value.trim() != ""){
+    if (message.value != null && message.value.trim() != "") {
         console.log("message found");
         message.value = "";
         name.value = "";
@@ -18,27 +19,27 @@ function contactUs() {
 
 }
 
-function popupVisibility(bool){
+function popupVisibility(bool) {
     console.log(document.getElementById('popup').style.visibility);
-    if(bool){
+    if (bool) {
         document.getElementById('popup').style.visibility = 'visible';
     }
-    else{
+    else {
         document.getElementById('popup').style.visibility = 'hidden';
     }
 }
 
-function clearSearch(){
+function clearSearch() {
     search = document.getElementById("searchInput");
     search.value = "";
 }
 
-function search(){
-    const data =  fetch(dataURL)
+function search() {
+    const data = fetch(dataURL)
         .then(response => {
             return response.json();
         })
-        .then(data =>{
+        .then(data => {
             console.log('Data from API: ', data);
             processSearch(data);
         })
@@ -48,32 +49,67 @@ function search(){
     return data;
 }
 
-function processSearch(data){
+function processSearch(data) {
     var search = document.getElementById("searchInput")
     var processString = search.value.toLowerCase().trim();
-    if(destinations.includes(processString)){
-        switch(processString){
+    if (destinations.includes(processString) || countryDestinations.includes(processString)) {
+        document.getElementById("location-list").replaceChildren();
+        document.getElementById("main-home").style.display = "none";
+        switch (processString) {
             case 'beach':
             case 'beaches':
                 console.log("beach");
-                console.log(data.beaches[0].imageUrl);
+                createRecommendation(data.beaches);
                 break;
 
             case 'temple':
             case 'temples':
                 console.log("temple");
-                console.log(data.temples);
+                createRecommendation(data.temples);
                 break;
 
-            case 'country':
-            case 'countries':
+            default:
                 console.log("country");
-                console.log(data.countries[0].cities[0].imageUrl);
-                //document.getElementById("testImg").setAttribute("src","..\\images\\sydney-opera-house-363244_1280.jpg")
+                data.countries.forEach(country => {
+                    if (country.name.toLowerCase() == processString) {
+                        countryRecommendation(country);
+                    }
+                })
                 break;
         }
     }
-    else{
+    else {
         console.error("invalid input");
     }
+}
+
+//function inputs data into website
+//utilizes templates for modular location box creation
+function createRecommendation(data) {
+    console.log(data);
+
+    data.forEach(location => {
+        var temp = document.getElementById("location-template").content;
+        var locationTemplate = document.importNode(temp, true);
+        locationTemplate.querySelector(".location-image").setAttribute("src", location.imageUrl);
+        locationTemplate.querySelector(".location-head").textContent = location.name;
+        locationTemplate.querySelector(".location-description").textContent = location.description;
+        document.getElementById("location-list").appendChild(locationTemplate);
+    });
+}
+
+function countryRecommendation(country) {
+    console.log(country);
+
+    country.cities.forEach(city => {
+        console.log(city);
+
+        var temp = document.getElementById("location-template").content;
+        var cityTemplate = document.importNode(temp, true);
+        cityTemplate.querySelector(".location-image").setAttribute("src", city.imageUrl);
+        cityTemplate.querySelector(".location-head").textContent = city.name;
+        cityTemplate.querySelector(".location-description").textContent = city.description;
+        document.getElementById("location-list").appendChild(cityTemplate);
+    });
+
 }
